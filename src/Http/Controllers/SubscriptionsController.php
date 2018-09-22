@@ -1,7 +1,6 @@
 <?php
 namespace Dameety\Paybox\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Dameety\Paybox\Models\Plan;
 use Dameety\Paybox\Models\Subscription;
 use Dameety\Paybox\Http\Controllers\Controller;

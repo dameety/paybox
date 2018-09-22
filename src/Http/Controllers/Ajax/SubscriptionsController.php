@@ -30,7 +30,6 @@ class SubscriptionsController extends Controller
      */
     public function store(Request $request)
     {
-        //resume the subscription
         $res = $this->stripeGateway->resumeSubscription($this->user);
         if ($res->error()) {
             $msg = (new ErrorHandler($res->error(), $this->user->id))->respond();
@@ -41,7 +40,6 @@ class SubscriptionsController extends Controller
 
         $plan = Plan::where('name', $request->planName)->first();
 
-        //swap subscription
         $res = $this->stripeGateway->swapSubscription($plan->identifier, $this->user);
         if ($res->error()) {
             $msg = (new ErrorHandler($res->error(), $this->user->id))->respond();
