@@ -1,0 +1,54 @@
+{
+    "name": "dameety/paybox",
+    "description": "Set up subscrption billing or payment in your laravel app swiftly.",
+    "keywords": [
+        "paybox",
+        "laravel",
+        "Stripe",
+        "billing",
+        "subscriptions"
+    ],
+    "authors": [
+        {
+            "name": "Damilola Jolayemi",
+            "email": "damijolayemi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "cviebrock/eloquent-sluggable": "^4.2.1",
+        "illuminate/support": "~5.5"
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9",
+        "orchestra/database": "^3.5",
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "~6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dameety\\Paybox\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dameety\\Paybox\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dameety\\Paybox\\PayboxServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
