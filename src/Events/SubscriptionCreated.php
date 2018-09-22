@@ -2,14 +2,13 @@
 
 namespace Dameety\Paybox\Events;
 
-class SubscriptionCreated
+class SubscriptionCreated extends BaseEvent
 {
-    public $user;
     public $planId;
 
     public function __construct($user, $planId)
     {
-        $this->user = $user;
+        parent::__construct($user);
         $this->planId = $planId;
     }
 }

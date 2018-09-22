@@ -2,12 +2,7 @@
 
 namespace Dameety\Paybox\Events;
 
-class InvoicePaymentSucceeded
+class InvoicePaymentSucceeded extends BaseEvent
 {
-    public $user;
 
-    public function __construct($user)
-    {
-        $this->user = $user;
-    }
 }

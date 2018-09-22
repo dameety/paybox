@@ -2,12 +2,7 @@
 
 namespace Dameety\Paybox\Events;
 
-class SubscriptionCancelled
+class SubscriptionCancelled extends BaseEvent
 {
-    public $user;
 
-    public function __construct($user)
-    {
-        $this->user = $user;
-    }
 }

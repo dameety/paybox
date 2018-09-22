@@ -2,12 +2,7 @@
 
 namespace Dameety\Paybox\Events;
 
-class SubscriptionCardUpdated
+class SubscriptionCardUpdated extends BaseEvent
 {
-    public $user;
 
-    public function __construct($user)
-    {
-        $this->user = $user;
-    }
 }
