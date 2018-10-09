@@ -55,14 +55,11 @@
             },
 
             toggleButtonState() {
-                //if user has a subscription and not on grace period
-                //due to cancelling, show the cancel button
                 if(this.hasSubscription
-                    && this.isCancelled === false) {
+                    && this.isCancelled === false
+                ){
                     this.showButton = true;
                 }
-                //if user has cancelled the subscription
-                //dont show the cancel button
                 if (this.isCancelled) {
                     this.showButton = false;
                 }

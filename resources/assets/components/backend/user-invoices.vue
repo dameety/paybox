@@ -1,6 +1,5 @@
 <template>
-    <!-- used in the paybox admin section -->
-    <!-- to view invoices of a user by id. -->
+
     <modal v-if="showModal">
         <div slot="header">
             <h2 class="uk-modal-title uk-margin-remove">

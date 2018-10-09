@@ -1,8 +1,5 @@
 <template>
     <div>
-        <!-- There are five buttons in this commponent and only one is rendered on the page per time, the users subscription status is used to determien which one to show. -->
-
-        <!-- This is the button that shows if the user has no suscription -->
         <button class="uk-button uk-button-default uk-button-small"
             @click.prevent="displayCheckoutModal()"
             :class="[isNotSubscribed, isSubscribed]"
@@ -15,8 +12,6 @@
             </span>
         </button>
 
-        <!-- this buttons shows if the user is subscribed to
-        plan passed to this component -->
         <button class="uk-button uk-button-default uk-button-small" @click.prevent="currentSubscription()"
             :class="[isSubscribed, isNotSubscribed]"
             v-if="currentPlanButton">
@@ -28,7 +23,6 @@
             </span>
         </button>
 
-        <!-- this button shows if the user needs to resume the subscription -->
         <button class="uk-button uk-button-default uk-button-small" @click.prevent="resumeSubscription()"
             :class="[isNotSubscribed, isSubscribed]"
             v-if="resumeSubscriptionButton">
@@ -40,7 +34,6 @@
             </span>
         </button>
 
-        <!-- this button shows if the user can swap his subscription -->
         <button class="uk-button uk-button-default uk-button-small" @click.prevent="swapSubscription()"
             :class="[isSubscribed, isNotSubscribed]" v-if="swapSubscriptionButton">
 
@@ -51,7 +44,6 @@
             </span>
         </button>
 
-        <!-- this button shows so the user can resume and also swap his suscription at same time. -->
         <button class="uk-button uk-button-default uk-button-small" @click.prevent="resumeAndSwapSub()"
             :class="[isSubscribed, isNotSubscribed]" v-if="resumeAndSwapSubscriptionButton">
 
@@ -62,7 +54,6 @@
             </span>
         </button>
 
-        <!-- new subscrption form -->
         <modal v-if="showModal">
             <div slot="header">
                 <h2 class="uk-modal-title uk-text-left uk-margin-remove">
@@ -78,13 +69,12 @@
                     <hr>
                 </div>
 
-                <!-- payment form -->
                 <form>
                     <div class="uk-margin uk-text-left">
                         <label class="uk-form-label" for="Card Holder Name">
                             Card Holder Name
                         </label>
-                        <div class="uk-form-controls">
+                        <div id="Card Holder Name" class="uk-form-controls">
                             <input class="uk-input" type="text"
                                 v-model="card.cardHolderName"
                                 name="cardHolderName"
@@ -100,7 +90,7 @@
                         <label class="uk-form-label" for="Card Number">
                             Card Number
                         </label>
-                        <div class="uk-form-controls">
+                        <div id="Card Number" class="uk-form-controls">
                             <div id="card-number" class="uk-input"
                             :class="{ 'uk-form-danger': cardNumberError }"></div>
                             <span class="help-block" v-if="cardNumberError">
@@ -114,7 +104,7 @@
                             <label class="uk-form-label" for="Card CVC">
                                 Card CVC
                             </label>
-                            <div class="uk-form-controls">
+                            <div id="Card CVC" class="uk-form-controls">
                                 <div id="card-cvc" class="uk-input"
                                     :class="{ 'uk-form-danger': cardCvcError }"></div>
                                 <span class="help-block" v-if="cardCvcError">
@@ -126,7 +116,7 @@
                             <label class="uk-form-label" for="Expiry Month">
                                 Expiry
                             </label>
-                            <div class="uk-form-controls">
+                            <div id="Expiry Month" class="uk-form-controls">
                                 <div id="card-expiry" class="uk-input"
                                     :class="{ 'uk-form-danger': cardExpiryError }"></div>
                                 <span class="help-block" v-if="cardExpiryError">
@@ -302,9 +292,6 @@
                 }
             },
 
-            /**
-             * perform checks to choose the class to apply
-            */
             applyButtonClass() {
                 if (this.hasSubscription
                     && this.planSubscribedTo === this.plan) {
@@ -434,8 +421,6 @@
             },
 
             createSubscriptionSuccessAlert() {
-                //wait for a second after closing the checkOutModal
-                //before showing this alert
                 setTimeout(() => {
                     this.$swal({
                         title: 'Success',

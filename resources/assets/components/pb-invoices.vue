@@ -1,7 +1,6 @@
 <template>
 <div>
 
-    <!-- to view invoice by current auth user -->
     <div class="uk-padding" v-if="invoices.length > 0">
         <div class="uk-background-default uk-overflow-auto uk-box-shadow-large">
 
@@ -33,7 +32,6 @@
         </div>
     </div>
 
-    <!-- if invoices could not be loaded -->
     <div class="uk-padding" v-if="stripeError">
         <div class="uk-background-danger uk-overflow-auto uk-box-shadow-large">
             <p class="stripeError uk-padding uk-margin-remove">

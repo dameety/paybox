@@ -3,7 +3,6 @@ export default {
         return {
             showModal: false,
 
-            //card
             cardHolderName: '',
             card: {
                 cvc: '',
@@ -11,13 +10,11 @@ export default {
                 expiry: ''
             },
 
-            //elements
             cardN: '',
             cardE: '',
             cardC: '',
             stripe: null,
 
-            // validation
             stripeError: '',
             cardCvcError: '',
             cardExpiryError: '',
